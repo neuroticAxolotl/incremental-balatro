@@ -1,0 +1,100 @@
+[gd_scene load_steps=2 format=3 uid="uid://dj046d2fgfg6h"]
+
+[ext_resource type="Texture2D" uid="uid://cdpp1x2rdt48r" path="res://spade.tres" id="1_f8ohe"]
+
+[node name="Decoration10" type="ReferenceRect"]
+offset_right = 113.0
+offset_bottom = 157.0
+scale = Vector2(1.1, 1.1)
+border_width = 0.0
+metadata/_edit_lock_ = true
+
+[node name="SuitIcon" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 28.1818
+offset_top = 58.0
+offset_right = 50.1818
+offset_bottom = 78.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_f8ohe")
+
+[node name="SuitIcon6" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 49.1818
+offset_top = 44.0
+offset_right = 71.1818
+offset_bottom = 64.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_f8ohe")
+
+[node name="SuitIcon8" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 70.1818
+offset_top = 58.0
+offset_right = 92.1818
+offset_bottom = 78.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_f8ohe")
+
+[node name="SuitIcon9" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 28.1818
+offset_top = 30.0
+offset_right = 50.1818
+offset_bottom = 50.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_f8ohe")
+
+[node name="SuitIcon10" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 70.1818
+offset_top = 30.0
+offset_right = 92.1818
+offset_bottom = 50.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_f8ohe")
+
+[node name="SuitIcon2" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 28.1818
+offset_top = 113.0
+offset_right = 50.1818
+offset_bottom = 133.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_f8ohe")
+
+[node name="SuitIcon7" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 49.1818
+offset_top = 99.0
+offset_right = 71.1818
+offset_bottom = 119.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_f8ohe")
+
+[node name="SuitIcon11" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 70.1818
+offset_top = 113.0
+offset_right = 92.1818
+offset_bottom = 133.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_f8ohe")
+
+[node name="SuitIcon12" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 28.1818
+offset_top = 85.0
+offset_right = 50.1818
+offset_bottom = 105.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_f8ohe")
+
+[node name="SuitIcon13" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 70.1818
+offset_top = 85.0
+offset_right = 92.1818
+offset_bottom = 105.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_f8ohe")
