@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://ba2616rxaf25y" path="res://m6x11plus.ttf" id="1_0anyr"]
 
 [resource]
+resource_local_to_scene = true
 font = ExtResource("1_0anyr")
-font_size = 36
+font_size = 72
 font_color = Color(0, 0, 0, 1)

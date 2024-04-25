@@ -1,13 +1,30 @@
-[gd_scene load_steps=5 format=3 uid="uid://cf2turloeyucu"]
+[gd_scene load_steps=12 format=3 uid="uid://cf2turloeyucu"]
 
 [ext_resource type="Texture2D" uid="uid://c1c28bgnlwry0" path="res://blank_card.png" id="1_1cnxi"]
 [ext_resource type="Script" path="res://Card.gd" id="2_v6v64"]
 [ext_resource type="Texture2D" uid="uid://cdpp1x2rdt48r" path="res://spade.tres" id="3_3a0f3"]
-[ext_resource type="LabelSettings" uid="uid://h8yn1mi8aedk" path="res://card_rank_label_settings.tres" id="4_q1yc2"]
+[ext_resource type="FontFile" uid="uid://ba2616rxaf25y" path="res://m6x11plus.ttf" id="4_v56jb"]
+[ext_resource type="Texture2D" uid="uid://bf5obpt0ebqg" path="res://spade_large.tres" id="5_xmf83"]
+[ext_resource type="Texture2D" uid="uid://byhdkgj20ivsc" path="res://heart_large.tres" id="6_d7mva"]
+[ext_resource type="Texture2D" uid="uid://e0k5x1w5j8ny" path="res://club_large.tres" id="7_7wvo8"]
+[ext_resource type="Texture2D" uid="uid://dxvbbbsaui82f" path="res://diamond_large.tres" id="8_mxboc"]
+[ext_resource type="Texture2D" uid="uid://ccqd4svr544q4" path="res://card_back.png" id="9_rnoh8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_kag6n"]
+resource_local_to_scene = true
+font = ExtResource("4_v56jb")
+font_size = 36
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ug8xb"]
+resource_local_to_scene = true
+font = ExtResource("4_v56jb")
+font_size = 72
+font_color = Color(0, 0, 0, 1)
 
 [node name="Card" type="TextureRect"]
-offset_right = 124.0
-offset_bottom = 173.0
+offset_right = 125.0
+offset_bottom = 174.0
 texture = ExtResource("1_1cnxi")
 stretch_mode = 4
 script = ExtResource("2_v6v64")
@@ -21,6 +38,7 @@ offset_right = 31.0
 offset_bottom = 49.0
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_3a0f3")
+metadata/_edit_lock_ = true
 
 [node name="RankLabel" type="Label" parent="."]
 layout_mode = 0
@@ -32,9 +50,10 @@ scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "10"
-label_settings = ExtResource("4_q1yc2")
+label_settings = SubResource("LabelSettings_kag6n")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
 [node name="SuitIcon2" type="TextureRect" parent="."]
 layout_mode = 0
@@ -45,6 +64,7 @@ offset_bottom = 164.0
 rotation = 3.14159
 scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_3a0f3")
+metadata/_edit_lock_ = true
 
 [node name="RankLabel2" type="Label" parent="."]
 layout_mode = 0
@@ -57,106 +77,60 @@ scale = Vector2(0.6, 0.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 36
 text = "10"
-label_settings = ExtResource("4_q1yc2")
+label_settings = SubResource("LabelSettings_kag6n")
 horizontal_alignment = 1
 vertical_alignment = 1
+metadata/_edit_lock_ = true
 
-[node name="Decoration10" type="ReferenceRect" parent="."]
-visible = false
+[node name="Decoration1" type="ReferenceRect" parent="."]
 layout_mode = 0
 offset_right = 124.0
 offset_bottom = 173.0
 metadata/_edit_lock_ = true
 
-[node name="SuitIcon" type="TextureRect" parent="Decoration10"]
+[node name="Spade" type="TextureRect" parent="Decoration1"]
+visible = false
 layout_mode = 0
-offset_left = 33.0
-offset_top = 67.0
-offset_right = 55.0
-offset_bottom = 87.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_3a0f3")
+offset_left = 41.0
+offset_top = 60.0
+offset_right = 84.0
+offset_bottom = 108.0
+scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(21.5, 24)
+texture = ExtResource("5_xmf83")
 
-[node name="SuitIcon6" type="TextureRect" parent="Decoration10"]
+[node name="Heart" type="TextureRect" parent="Decoration1"]
+visible = false
 layout_mode = 0
-offset_left = 54.0
-offset_top = 53.0
-offset_right = 76.0
-offset_bottom = 73.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_3a0f3")
+offset_left = 41.0
+offset_top = 60.0
+offset_right = 84.0
+offset_bottom = 108.0
+scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(21.5, 24)
+texture = ExtResource("6_d7mva")
 
-[node name="SuitIcon8" type="TextureRect" parent="Decoration10"]
+[node name="Club" type="TextureRect" parent="Decoration1"]
+visible = false
 layout_mode = 0
-offset_left = 75.0
-offset_top = 67.0
-offset_right = 97.0
-offset_bottom = 87.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_3a0f3")
+offset_left = 41.0
+offset_top = 60.0
+offset_right = 84.0
+offset_bottom = 108.0
+scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(21.5, 24)
+texture = ExtResource("7_7wvo8")
 
-[node name="SuitIcon9" type="TextureRect" parent="Decoration10"]
+[node name="Diamond" type="TextureRect" parent="Decoration1"]
+visible = false
 layout_mode = 0
-offset_left = 33.0
-offset_top = 39.0
-offset_right = 55.0
-offset_bottom = 59.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_3a0f3")
-
-[node name="SuitIcon10" type="TextureRect" parent="Decoration10"]
-layout_mode = 0
-offset_left = 75.0
-offset_top = 39.0
-offset_right = 97.0
-offset_bottom = 59.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_3a0f3")
-
-[node name="SuitIcon2" type="TextureRect" parent="Decoration10"]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 122.0
-offset_right = 55.0
-offset_bottom = 142.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_3a0f3")
-
-[node name="SuitIcon7" type="TextureRect" parent="Decoration10"]
-layout_mode = 0
-offset_left = 54.0
-offset_top = 108.0
-offset_right = 76.0
-offset_bottom = 128.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_3a0f3")
-
-[node name="SuitIcon11" type="TextureRect" parent="Decoration10"]
-layout_mode = 0
-offset_left = 75.0
-offset_top = 122.0
-offset_right = 97.0
-offset_bottom = 142.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_3a0f3")
-
-[node name="SuitIcon12" type="TextureRect" parent="Decoration10"]
-layout_mode = 0
-offset_left = 33.0
-offset_top = 94.0
-offset_right = 55.0
-offset_bottom = 114.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_3a0f3")
-
-[node name="SuitIcon13" type="TextureRect" parent="Decoration10"]
-layout_mode = 0
-offset_left = 75.0
-offset_top = 94.0
-offset_right = 97.0
-offset_bottom = 114.0
-scale = Vector2(0.7, 0.7)
-texture = ExtResource("3_3a0f3")
+offset_left = 41.0
+offset_top = 54.0
+offset_right = 84.0
+offset_bottom = 113.0
+scale = Vector2(1.1, 1.1)
+pivot_offset = Vector2(21.5, 24)
+texture = ExtResource("8_mxboc")
 
 [node name="Decoration2" type="ReferenceRect" parent="."]
 visible = false
@@ -299,6 +273,7 @@ offset_bottom = 97.9997
 texture = ExtResource("3_3a0f3")
 
 [node name="Decoration6" type="ReferenceRect" parent="."]
+visible = false
 layout_mode = 0
 offset_right = 124.0
 offset_bottom = 173.0
@@ -351,3 +326,370 @@ offset_top = 78.0
 offset_right = 92.0
 offset_bottom = 97.9997
 texture = ExtResource("3_3a0f3")
+
+[node name="Decoration7" type="ReferenceRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 173.0
+metadata/_edit_lock_ = true
+
+[node name="SuitIcon6" type="TextureRect" parent="Decoration7"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 40.0
+offset_right = 52.0
+offset_bottom = 60.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon7" type="TextureRect" parent="Decoration7"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 115.0
+offset_right = 52.0
+offset_bottom = 135.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon8" type="TextureRect" parent="Decoration7"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 40.0
+offset_right = 92.0
+offset_bottom = 60.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon9" type="TextureRect" parent="Decoration7"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 115.0
+offset_right = 92.0
+offset_bottom = 135.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon10" type="TextureRect" parent="Decoration7"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 78.0
+offset_right = 52.0
+offset_bottom = 97.9997
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon11" type="TextureRect" parent="Decoration7"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 78.0
+offset_right = 92.0
+offset_bottom = 97.9997
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon12" type="TextureRect" parent="Decoration7"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 59.0
+offset_right = 72.0
+offset_bottom = 78.9997
+texture = ExtResource("3_3a0f3")
+
+[node name="Decoration8" type="ReferenceRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 173.0
+metadata/_edit_lock_ = true
+
+[node name="SuitIcon6" type="TextureRect" parent="Decoration8"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 40.0
+offset_right = 52.0
+offset_bottom = 60.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon7" type="TextureRect" parent="Decoration8"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 115.0
+offset_right = 52.0
+offset_bottom = 135.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon8" type="TextureRect" parent="Decoration8"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 40.0
+offset_right = 92.0
+offset_bottom = 60.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon9" type="TextureRect" parent="Decoration8"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 115.0
+offset_right = 92.0
+offset_bottom = 135.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon10" type="TextureRect" parent="Decoration8"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 78.0
+offset_right = 52.0
+offset_bottom = 97.9997
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon11" type="TextureRect" parent="Decoration8"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 78.0
+offset_right = 92.0
+offset_bottom = 97.9997
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon12" type="TextureRect" parent="Decoration8"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 59.0
+offset_right = 72.0
+offset_bottom = 78.9997
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon13" type="TextureRect" parent="Decoration8"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 96.0
+offset_right = 72.0
+offset_bottom = 116.0
+texture = ExtResource("3_3a0f3")
+
+[node name="Decoration9" type="ReferenceRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 173.0
+metadata/_edit_lock_ = true
+
+[node name="SuitIcon6" type="TextureRect" parent="Decoration9"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 52.0
+offset_bottom = 40.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon7" type="TextureRect" parent="Decoration9"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 95.0
+offset_right = 52.0
+offset_bottom = 115.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon8" type="TextureRect" parent="Decoration9"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 20.0
+offset_right = 92.0
+offset_bottom = 40.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon9" type="TextureRect" parent="Decoration9"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 95.0
+offset_right = 92.0
+offset_bottom = 115.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon10" type="TextureRect" parent="Decoration9"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 58.0
+offset_right = 52.0
+offset_bottom = 77.9997
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon11" type="TextureRect" parent="Decoration9"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 58.0
+offset_right = 92.0
+offset_bottom = 77.9997
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon12" type="TextureRect" parent="Decoration9"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 133.0
+offset_right = 52.0
+offset_bottom = 153.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon13" type="TextureRect" parent="Decoration9"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 133.0
+offset_right = 92.0
+offset_bottom = 153.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon15" type="TextureRect" parent="Decoration9"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 72.0
+offset_bottom = 60.0
+texture = ExtResource("3_3a0f3")
+
+[node name="Decoration10" type="ReferenceRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 173.0
+metadata/_edit_lock_ = true
+
+[node name="SuitIcon6" type="TextureRect" parent="Decoration10"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 20.0
+offset_right = 52.0
+offset_bottom = 40.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon7" type="TextureRect" parent="Decoration10"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 95.0
+offset_right = 52.0
+offset_bottom = 115.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon8" type="TextureRect" parent="Decoration10"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 20.0
+offset_right = 92.0
+offset_bottom = 40.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon9" type="TextureRect" parent="Decoration10"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 95.0
+offset_right = 92.0
+offset_bottom = 115.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon10" type="TextureRect" parent="Decoration10"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 58.0
+offset_right = 52.0
+offset_bottom = 77.9997
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon11" type="TextureRect" parent="Decoration10"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 58.0
+offset_right = 92.0
+offset_bottom = 77.9997
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon12" type="TextureRect" parent="Decoration10"]
+layout_mode = 0
+offset_left = 30.0
+offset_top = 133.0
+offset_right = 52.0
+offset_bottom = 153.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon13" type="TextureRect" parent="Decoration10"]
+layout_mode = 0
+offset_left = 70.0
+offset_top = 133.0
+offset_right = 92.0
+offset_bottom = 153.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon14" type="TextureRect" parent="Decoration10"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 115.0
+offset_right = 72.0
+offset_bottom = 135.0
+texture = ExtResource("3_3a0f3")
+
+[node name="SuitIcon15" type="TextureRect" parent="Decoration10"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 72.0
+offset_bottom = 60.0
+texture = ExtResource("3_3a0f3")
+
+[node name="Decoration11" type="ReferenceRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 173.0
+metadata/_edit_lock_ = true
+
+[node name="RankLabel" type="Label" parent="Decoration11"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 47.0
+offset_right = 86.0
+offset_bottom = 119.0
+scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(21.5, 24)
+text = "J"
+label_settings = SubResource("LabelSettings_ug8xb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Decoration12" type="ReferenceRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 173.0
+metadata/_edit_lock_ = true
+
+[node name="RankLabel" type="Label" parent="Decoration12"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 47.0
+offset_right = 86.0
+offset_bottom = 119.0
+scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(21.5, 24)
+text = "Q"
+label_settings = SubResource("LabelSettings_ug8xb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Decoration13" type="ReferenceRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 124.0
+offset_bottom = 173.0
+metadata/_edit_lock_ = true
+
+[node name="RankLabel" type="Label" parent="Decoration13"]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 47.0
+offset_right = 86.0
+offset_bottom = 119.0
+scale = Vector2(1.3, 1.3)
+pivot_offset = Vector2(21.5, 24)
+text = "K"
+label_settings = SubResource("LabelSettings_ug8xb")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CardBack" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("9_rnoh8")

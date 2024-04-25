@@ -2,25 +2,37 @@ extends Node
 
 var card_scene = preload("res://card.tscn")
 
-enum Suits {SPADE, HEART, CLUB, DIAMOND}
+var suits = ["spade", "heart", "club", "diamond"]
 
 var suit_icons = {
-	Suits.SPADE: preload("res://spade.tres"), 
-	Suits.HEART: preload("res://heart.tres"), 
-	Suits.CLUB: preload("res://club.tres"), 
-	Suits.DIAMOND: preload("res://diamond.tres"),
+		"spade": preload("res://spade.tres"), 
+		"heart": preload("res://heart.tres"), 
+		"club": preload("res://club.tres"), 
+		"diamond": preload("res://diamond.tres"),
 	}
 
 var suit_colors = {
-	Suits.SPADE: Color("000000"), 
-	Suits.HEART: Color("ff0000"), 
-	Suits.CLUB: Color("404b4f"), 
-	Suits.DIAMOND: Color("ff7800"),
+		"spade": Color("000000"), 
+		"heart": Color("ff0000"), 
+		"club": Color("404b4f"), 
+		"diamond": Color("ff7800"),
 	}
 
+var deck = []
+var discard = []
 
-func CreateCard(suit, rank):
+func _ready():
+	pass
+
+func create_card(suit, rank, face_down = false):
 	var new_card = card_scene.instantiate()
 	new_card.rank = rank
 	new_card.suit = suit
 	new_card.update_values()
+	return new_card
+
+func create_random_card():
+	var random_suit = suits[randi_range(0,3)]
+	var random_rank = randi_range(1,13)
+	return create_card(random_suit, random_rank)
+	
