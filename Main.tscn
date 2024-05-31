@@ -1,10 +1,32 @@
-[gd_scene load_steps=2 format=3 uid="uid://biir43u87dyt1"]
+[gd_scene load_steps=4 format=3 uid="uid://biir43u87dyt1"]
 
 [ext_resource type="Script" path="res://DrawCards.gd" id="2_0nifu"]
 
+[sub_resource type="Gradient" id="Gradient_f06ib"]
+colors = PackedColorArray(0.533333, 0, 0.215686, 1, 0.57, 0.1596, 0.40584, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_d5qvm"]
+gradient = SubResource("Gradient_f06ib")
+width = 1280
+height = 720
+fill_from = Vector2(0, 1)
+fill_to = Vector2(0, 0)
+
 [node name="Node" type="Node"]
 
-[node name="Hand" type="HBoxContainer" parent="."]
+[node name="background" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+texture = SubResource("GradientTexture2D_d5qvm")
+metadata/_edit_lock_ = true
+
+[node name="DrawnCards" type="HBoxContainer" parent="background"]
+offset_left = -233.0
+offset_top = 81.0
+offset_right = 282.0
+offset_bottom = 345.0
+alignment = 1
+script = ExtResource("2_0nifu")
+
+[node name="PlayedCards" type="HBoxContainer" parent="background"]
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("2_0nifu")

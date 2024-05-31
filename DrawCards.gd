@@ -1,13 +1,12 @@
 extends HBoxContainer
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	for i in range(5):
+func draw_cards(amount):
+	for i in range(amount):
 		var new_card = Global.create_random_card()
 		add_child(new_card)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	if get_child_count() == 0:
+		draw_cards(8)
